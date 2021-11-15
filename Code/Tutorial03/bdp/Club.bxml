@@ -1,0 +1,803 @@
+<Machine name='Club' type='abstraction'>
+<Parameters>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='5' c='15' s='4'/>
+</Attr>
+</Id>
+<Id value='capacity' typref='2701647786'>
+<Attr>
+<Pos l='5' c='21' s='8'/>
+</Attr>
+</Id>
+</Parameters>
+<Constraints>
+<Attr>
+<Pos l='7' c='5' s='11'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Set>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='5' c='15' s='4'/>
+</Attr>
+</Id>
+</Set>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='7' c='26' s='1'/>
+</Attr>
+<Id value='capacity' typref='2701647786'>
+<Attr>
+<Pos l='7' c='17' s='8'/>
+</Attr>
+</Id>
+<Id value='NAT1' typref='3603043417'>
+<Attr>
+<Pos l='7' c='28' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;='>
+<Attr>
+<Pos l='7' c='37' s='2'/>
+</Attr>
+<Integer_Literal value='5' typref='2701647786'>
+<Attr>
+<Pos l='7' c='35' s='1'/>
+</Attr>
+</Integer_Literal>
+<Id value='capacity' typref='2701647786'>
+<Attr>
+<Pos l='7' c='40' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;'>
+<Attr>
+<Pos l='7' c='60' s='1'/>
+</Attr>
+<Id value='capacity' typref='2701647786'>
+<Attr>
+<Pos l='7' c='51' s='8'/>
+</Attr>
+</Id>
+<Unary_Exp op='card' typref='2701647786'>
+<Attr>
+<Pos l='7' c='62' s='4'/>
+</Attr>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='7' c='67' s='4'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Constraints>
+<Sets>
+<Attr>
+<Pos l='9' c='5' s='4'/>
+</Attr>
+<Set>
+<Id value='ANSWER' typref='1186478419'>
+<Attr>
+<Pos l='9' c='10' s='6'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='yes' typref='3220095110'>
+<Attr>
+<Pos l='9' c='21' s='3'/>
+</Attr>
+</Id>
+<Id value='no' typref='3220095110'>
+<Attr>
+<Pos l='9' c='26' s='2'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+</Sets>
+<Concrete_Constants>
+<Attr>
+<Pos l='11' c='5' s='18'/>
+</Attr>
+<Id value='queuetotal' typref='2701647786'>
+<Attr>
+<Pos l='11' c='15' s='10'/>
+</Attr>
+</Id>
+</Concrete_Constants>
+<Abstract_Variables>
+<Attr>
+<Pos l='15' c='5' s='18'/>
+</Attr>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='15' c='15' s='7'/>
+</Attr>
+</Id>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='15' c='24' s='7'/>
+</Attr>
+</Id>
+</Abstract_Variables>
+<Properties>
+<Attr>
+<Pos l='13' c='5' s='10'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='13' c='27' s='1'/>
+</Attr>
+<Id value='queuetotal' typref='2701647786'>
+<Attr>
+<Pos l='13' c='16' s='10'/>
+</Attr>
+</Id>
+<Id value='NAT1' typref='3603043417'>
+<Attr>
+<Pos l='13' c='29' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&gt;'>
+<Attr>
+<Pos l='13' c='47' s='1'/>
+</Attr>
+<Id value='queuetotal' typref='2701647786'>
+<Attr>
+<Pos l='13' c='36' s='10'/>
+</Attr>
+</Id>
+<Integer_Literal value='2' typref='2701647786'>
+<Attr>
+<Pos l='13' c='49' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Nary_Pred>
+</Properties>
+<Invariant>
+<Attr>
+<Pos l='17' c='5' s='9'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op='&lt;'>
+<Attr>
+<Pos l='17' c='26' s='1'/>
+</Attr>
+<Id value='queuetotal' typref='2701647786'>
+<Attr>
+<Pos l='17' c='15' s='10'/>
+</Attr>
+</Id>
+<Id value='capacity' typref='2701647786'>
+<Attr>
+<Pos l='17' c='28' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;:'>
+<Attr>
+<Pos l='18' c='23' s='2'/>
+</Attr>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='18' c='15' s='7'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='18' c='26' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;:'>
+<Attr>
+<Pos l='19' c='23' s='2'/>
+</Attr>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='19' c='15' s='7'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='19' c='26' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='20' c='34' s='1'/>
+</Attr>
+<Binary_Exp op='/\' typref='1333172640'>
+<Attr>
+<Pos l='20' c='23' s='2'/>
+</Attr>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='20' c='15' s='7'/>
+</Attr>
+</Id>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='20' c='26' s='7'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<EmptySet typref='3817003670'>
+<Attr>
+<Pos l='20' c='36' s='2'/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;='>
+<Attr>
+<Pos l='21' c='29' s='2'/>
+</Attr>
+<Unary_Exp op='card' typref='2701647786'>
+<Attr>
+<Pos l='21' c='15' s='4'/>
+</Attr>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='21' c='20' s='7'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Id value='capacity' typref='2701647786'>
+<Attr>
+<Pos l='21' c='32' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;='>
+<Attr>
+<Pos l='22' c='29' s='2'/>
+</Attr>
+<Unary_Exp op='card' typref='2701647786'>
+<Attr>
+<Pos l='22' c='15' s='4'/>
+</Attr>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='22' c='20' s='7'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Id value='queuetotal' typref='2701647786'>
+<Attr>
+<Pos l='22' c='32' s='10'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='24' c='5' s='14'/>
+</Attr>
+<Nary_Sub op='||'>
+<Assignement_Sub>
+<Attr>
+<Pos l='24' c='28' s='2'/>
+</Attr>
+<Variables>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='24' c='20' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<EmptySet typref='3817003670'>
+<Attr>
+<Pos l='24' c='31' s='2'/>
+</Attr>
+</EmptySet>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='24' c='45' s='2'/>
+</Attr>
+<Variables>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='24' c='37' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<EmptySet typref='3817003670'>
+<Attr>
+<Pos l='24' c='48' s='2'/>
+</Attr>
+</EmptySet>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Initialisation>
+<Operations>
+<Operation name='join'>
+<Attr>
+<Pos l='27' c='9' s='4' endLine='32'/>
+</Attr>
+<Input_Parameters>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='27' c='15' s='9'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='28' c='27' s='1'/>
+</Attr>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='28' c='17' s='9'/>
+</Attr>
+</Id>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='28' c='29' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;'>
+<Attr>
+<Pos l='28' c='53' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='2701647786'>
+<Attr>
+<Pos l='28' c='39' s='4'/>
+</Attr>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='28' c='44' s='7'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Id value='capacity' typref='2701647786'>
+<Attr>
+<Pos l='28' c='55' s='8'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Nary_Sub op='||'>
+<Assignement_Sub>
+<Attr>
+<Pos l='30' c='21' s='2'/>
+</Attr>
+<Variables>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='30' c='13' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='\/' typref='1333172640'>
+<Attr>
+<Pos l='30' c='32' s='2'/>
+</Attr>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='30' c='24' s='7'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='1333172640'>
+<Attr>
+<Pos l='30' c='35' s='1'/>
+</Attr>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='30' c='37' s='9'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='31' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='31' c='16' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='-' typref='1333172640'>
+<Attr>
+<Pos l='31' c='35' s='1'/>
+</Attr>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='31' c='27' s='7'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='1333172640'>
+<Attr>
+<Pos l='31' c='37' s='1'/>
+</Attr>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='31' c='39' s='9'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Nary_Sub>
+</Body>
+</Operation>
+<Operation name='join_queue'>
+<Attr>
+<Pos l='33' c='9' s='10' endLine='38'/>
+</Attr>
+<Input_Parameters>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='33' c='21' s='9'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='34' c='27' s='1'/>
+</Attr>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='34' c='17' s='9'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='34' c='29' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='/:'>
+<Attr>
+<Pos l='34' c='46' s='2'/>
+</Attr>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='34' c='36' s='9'/>
+</Attr>
+</Id>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='34' c='49' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='/:'>
+<Attr>
+<Pos l='35' c='23' s='2'/>
+</Attr>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='35' c='13' s='9'/>
+</Attr>
+</Id>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='35' c='26' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;'>
+<Attr>
+<Pos l='35' c='50' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='2701647786'>
+<Attr>
+<Pos l='35' c='36' s='4'/>
+</Attr>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='35' c='41' s='7'/>
+</Attr>
+</Id>
+</Unary_Exp>
+<Id value='queuetotal' typref='2701647786'>
+<Attr>
+<Pos l='35' c='52' s='10'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='37' c='21' s='2'/>
+</Attr>
+<Variables>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='37' c='13' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='\/' typref='1333172640'>
+<Attr>
+<Pos l='37' c='32' s='2'/>
+</Attr>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='37' c='24' s='7'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='1333172640'>
+<Attr>
+<Pos l='37' c='35' s='1'/>
+</Attr>
+<Id value='newmember' typref='2144979833'>
+<Attr>
+<Pos l='37' c='37' s='9'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='remove'>
+<Attr>
+<Pos l='39' c='9' s='6' endLine='43'/>
+</Attr>
+<Input_Parameters>
+<Id value='member' typref='2144979833'>
+<Attr>
+<Pos l='39' c='17' s='6'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='40' c='24' s='1'/>
+</Attr>
+<Id value='member' typref='2144979833'>
+<Attr>
+<Pos l='40' c='17' s='6'/>
+</Attr>
+</Id>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='40' c='26' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='42' c='21' s='2'/>
+</Attr>
+<Variables>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='42' c='13' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='-' typref='1333172640'>
+<Attr>
+<Pos l='42' c='32' s='1'/>
+</Attr>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='42' c='24' s='7'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='1333172640'>
+<Attr>
+<Pos l='42' c='34' s='1'/>
+</Attr>
+<Id value='member' typref='2144979833'>
+<Attr>
+<Pos l='42' c='36' s='6'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='semi_reset'>
+<Attr>
+<Pos l='44' c='9' s='10' endLine='47'/>
+</Attr>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='46' c='30' s='2'/>
+</Attr>
+<Variables>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='46' c='13' s='7'/>
+</Attr>
+</Id>
+<Id value='waiting' typref='1333172640'>
+<Attr>
+<Pos l='46' c='22' s='7'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<EmptySet typref='3817003670'>
+<Attr>
+<Pos l='46' c='33' s='2'/>
+</Attr>
+</EmptySet>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='46' c='37' s='7'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='is_member'>
+<Attr>
+<Pos l='48' c='9' s='3' endLine='57'/>
+</Attr>
+<Output_Parameters>
+<Id value='ans' typref='3220095110'>
+<Attr>
+<Pos l='48' c='9' s='3'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='member' typref='2144979833'>
+<Attr>
+<Pos l='48' c='28' s='6'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='49' c='24' s='1'/>
+</Attr>
+<Id value='member' typref='2144979833'>
+<Attr>
+<Pos l='49' c='17' s='6'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='49' c='26' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='51' c='17' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='51' c='29' s='1'/>
+</Attr>
+<Id value='member' typref='2144979833'>
+<Attr>
+<Pos l='51' c='22' s='6'/>
+</Attr>
+</Id>
+<Id value='members' typref='1333172640'>
+<Attr>
+<Pos l='51' c='31' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='53' c='25' s='2'/>
+</Attr>
+<Variables>
+<Id value='ans' typref='3220095110'>
+<Attr>
+<Pos l='53' c='21' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='yes' typref='3220095110'>
+<Attr>
+<Pos l='53' c='28' s='3'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='55' c='25' s='2'/>
+</Attr>
+<Variables>
+<Id value='ans' typref='3220095110'>
+<Attr>
+<Pos l='55' c='21' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='no' typref='3220095110'>
+<Attr>
+<Pos l='55' c='28' s='2'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='1333172640'>
+<Unary_Exp op='POW'>
+<Id value='NAME'/>
+</Unary_Exp>
+</Type>
+<Type id='2701647786'>
+<Id value='INTEGER'/>
+</Type>
+<Type id='3603043417'>
+<Unary_Exp op='POW'>
+<Id value='INTEGER'/>
+</Unary_Exp>
+</Type>
+<Type id='1186478419'>
+<Unary_Exp op='POW'>
+<Id value='ANSWER'/>
+</Unary_Exp>
+</Type>
+<Type id='3220095110'>
+<Id value='ANSWER'/>
+</Type>
+<Type id='3817003670'>
+<Unary_Exp op='POW'>
+<Generic_Type/>
+</Unary_Exp>
+</Type>
+<Type id='2144979833'>
+<Id value='NAME'/>
+</Type>
+</TypeInfos>
+
+</Machine>
