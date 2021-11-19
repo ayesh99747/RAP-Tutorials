@@ -1,4 +1,10 @@
 digraph {
 Club [ label=" Club " shape= box ]
+Exercise3_1 [ label=" Exercise3_1 " shape= box ]
+Exercise3_3 [ label=" Exercise3_3 " shape= box ]
+Exercise3_4 [ label=" Exercise3_4 " shape= box ]
+Exercise3_5 [ label=" Exercise3_5 " shape= box ]
+Exercise3_7 [ label=" Exercise3_7 " shape= box ]
+Grid [ label=" Grid " shape= box ]
 
 }

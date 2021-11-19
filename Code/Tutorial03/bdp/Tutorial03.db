@@ -7,5 +7,23 @@
         <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial03" name="Club" suffix="mch" user="ayesh">
             <component name="Club" type="specification" />
         </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial03" name="Exercise3_1" suffix="mch" user="ayesh">
+            <component name="Exercise3_1" type="specification" />
+        </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial03" name="Exercise3_3" suffix="mch" user="ayesh">
+            <component name="Exercise3_3" type="specification" />
+        </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial03" name="Exercise3_4" suffix="mch" user="ayesh">
+            <component name="Exercise3_4" type="specification" />
+        </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial03" name="Exercise3_5" suffix="mch" user="ayesh">
+            <component name="Exercise3_5" type="specification" />
+        </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial03" name="Exercise3_7" suffix="mch" user="ayesh">
+            <component name="Exercise3_7" type="specification" />
+        </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial03" name="Grid" suffix="mch" user="ayesh">
+            <component name="Grid" type="specification" />
+        </component_file>
     </project>
 </db_xml>

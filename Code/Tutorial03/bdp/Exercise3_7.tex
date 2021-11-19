@@ -1,0 +1,417 @@
+\documentclass[11pt]{article}
+\setlength{\topmargin}{13mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\textheight}{225mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\textwidth}{160mm}
+\usepackage{supertabular}
+%\input{psfig}
+
+\begin{document}
+\begin{sloppypar}
+
+% DEFINITION DES CARACTERES MATHEMATIQUES B
+%------------------------------------------
+\def\@setmcodes#1#2#3{{\count0=#1 \count1=#3
+	\loop \global\mathcode\count0=\count1 \ifnum \count0<#2
+	\advance\count0 by1 \advance\count1 by1 \repeat}}
+
+\@setmcodes{`A}{`Z}{"7441}
+\@setmcodes{`a}{`z}{"7461}
+
+\mathcode`\;="8000 % Makes ; active in math mode
+{\catcode`\;=\active \gdef;{\semicolon\;}}
+\mathchardef\semicolon="003B
+%    Nominal distance from top of paper to top of page
+\topmargin 0 pt
+\textheight 53\baselineskip
+
+%   Left margin on odd-numbered pages
+\oddsidemargin  0.15 in
+%   Left margin on even-numbered pages
+\evensidemargin 0.35 in
+%   Width of marginal notes.
+\marginparwidth 1 in
+%   Note that \oddsidemargin = \evensidemargin
+\oddsidemargin 0.25 in
+\evensidemargin 0.25 in
+\marginparwidth 0.75 in
+\textwidth 5.875 in % Width of text line.
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0ex}
+
+% DEFINITION DES FONTS
+%---------------------
+% The AMS extra symbol fonts are loaded.
+% Note: sometimes called euxm10
+\font\msx=msam10
+% Note: sometimes called euym10
+\font\msy=msbm10
+
+\newfam\msxfam \textfont\msxfam=\msx
+\newfam\msyfam \textfont\msyfam=\msy
+
+\def\famletter#1{\ifcase #1 0\or 1\or 2\or 3\or 4\or 5\or 6\or 7\or
+	8\or 9\or A\or B\or C\or D\or E\or F\fi}
+
+\edef\fx{\famletter\msxfam}
+\edef\fy{\famletter\msyfam}
+
+\def\bbold{\fam\msyfam \msy}
+
+% SYMBOLES B
+%-----------
+% makes a quoted expression in mathematical text
+\def\token#1{\hbox{`$#1$'}}
+% used for error messages in Z specs
+\def\report#1{\hbox{`{\tt #1}'}}
+
+% \@myop makes an operator, with a strut to defeat TeX's vertical adjustment.
+\def\@myop#1{\mathop{\mathstrut{#1}}\nolimits}
+
+% This underscore doesn't have the little kern --- you get an italic
+% correction anyway in math mode.
+\def\_{\leavevmode \vbox{\hrule width0.5em}}
+
+% Save \q as \xq for quantifiers q.
+\let\xforall=\forall
+\let\xexists=\exists
+\let\xlambda=\lambda
+\let\xmu=\mu
+
+% \p and \f make arrows with 1 and 2 crossings resp.
+\def\p#1{\mathrel{\ooalign{\hfil$\mapstochar\mkern 5mu$\hfil\cr$#1$}}}
+\def\f#1{\mathrel{\ooalign{\hfil
+	$\mapstochar\mkern 3mu\mapstochar\mkern 5mu$\hfil\cr$#1$}}}
+
+\let\mc=\mathchardef
+
+\def	\pow		{\mbox{${\cal P}$}}
+\def	\po1		{\mbox{${\cal P}_1$}}
+\let	\cross		\times
+\def	\lambda		{\@myop{\xlambda}}
+\def	\lnot		{\neg\;}
+\def	\land		{\mathrel{\wedge}}
+\def	\lor		{\mathrel{\vee}}
+\let	\implies	\Rightarrow
+\let	\iff		\Leftrightarrow
+\def	\forall		{\@myop{\xforall}}
+\def	\exists		{\@myop{\xexists}}
+\def	\semi		{\mathrel{\comp}}
+\def	\ssemi		{\mathbin{\rm ;}}
+\let	\ensembleVide	\emptyset
+\let	\rel		\leftrightarrow
+\def	\dom		{\@myop{\sf dom}}
+\def	\ran		{\@myop{\sf ran}}
+\def	\id		{\@myop{\sf id}}
+\def	\comp		{\mathbin{\raise
+			0.6ex\hbox{\oalign{\hfil$\scriptscriptstyle
+			\rm o$\hfil\cr\hfil$\scriptscriptstyle\rm 9$\hfil}}}}
+\def	\para		{\mbox{$\mid\mid$}}
+\mc	\dres		"2\fx43
+\mc	\rres		"2\fx42
+\def	\ndres		{\mathbin{{\dres} \llap{$-$}}}
+\def	\nrres		{\mathbin{{\rres}\llap{$-$}}}
+\def	\lover		{\mathbin{{\dres} \llap{$-\!\!\!\!-\!$}}}
+\def	\rover		{\mathbin{{\rres}\llap{$\!-\!\!\!-$}}}
+\let	\fun		\rightarrow
+\def	\pfun		{\p\fun}
+\def	\pinj		{\p\inj}
+\mc	\inj		"3\fx1A
+\def	\psurj		{\p\surj}
+\mc	\surj		"3\fx10
+\def	\bij		{\surj\!\!\!\!\!\!\!\inj}
+\def	\nat		{\mbox{${\cal N}$}}
+\def	\na1		{\mbox{${\cal N}_1$}}
+\def	\num		{\mbox{${\cal Z}$}}
+\def	\int		{\mbox{${\cal Z}$}}
+\def	\rat		{\mbox{${\cal Q}$}}
+\def	\div		{\mathbin{\rm /}}
+\def	\mod		{\mathbin{\bf mod}}
+\def	\upto		{\mathbin{\ldotp\ldotp}}
+\def	\finset		{\mbox{${\cal F}$}}
+\def	\finse1		{\mbox{${\cal F}_1$}}
+\def	\ffun		{\f\fun}
+\def	\finj		{\f\inj}
+\def	\seq		{\@myop{\rm seq}}
+\def	\cat		{\mathbin{\raise 0.8ex\hbox{$\mathchar"2\fx61$}}}
+\def	\sep		{\hspace*{.05in}}
+
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{0}
+
+%-------------------%
+% Debut du document %
+%-------------------%
+
+ 
+
+\bf MACHINE
+
+\hspace*{0.20in}\it Exercise3\_7
+
+ 
+
+\hspace*{0.20in}\bf SETS 
+
+\hspace*{0.40in}\it ANSWER \rm = \rm \{ \it yes\rm , \it no \rm \}\rm ;
+
+\hspace*{0.40in}\it OUTCOME \rm = \rm \{ \it NoMoreDeliveries\rm , \it NotDeliveredTo\rm , \it NotDeliveringPaperAndMagazine \rm \}\rm ;
+
+\hspace*{0.40in}\it STATUS \rm = \rm \{ \it PaperAndMagazine\rm , \it OnlyPaper\rm , \it OnlyMagazine\rm , \it NoDeliveries\rm , \it NotBothPaperAndMagazine \rm \}
+
+\vspace*{4mm}
+\hspace*{0.20in}\bf CONSTANTS
+
+\hspace*{0.40in}\it MAX\_DELIVERIES\hspace*{0.30in}
+
+\hspace*{0.20in}\bf PROPERTIES
+
+\hspace*{0.40in}\it MAX\_DELIVERIES  $\in$  \bf NAT1\hspace*{0.10in} $\land$ \hspace*{0.10in}\it MAX\_DELIVERIES \rm = \rm 1\rm 0
+
+\hspace*{0.10in}
+
+\hspace*{0.20in}\bf VARIABLES
+
+\hspace*{0.40in}\it houseset\rm , \it magazineHouses
+
+\hspace*{0.20in}\bf INVARIANT
+
+\hspace*{0.40in}\it houseset  $\subseteq$  \bf NAT1 
+
+\hspace*{0.40in} $\land$  \bf card\rm ( \it houseset \rm )  $\leq$  \it MAX\_DELIVERIES 
+
+\hspace*{0.40in} $\land$  \it magazineHouses  $\subseteq$  \bf NAT1 
+
+\hspace*{0.40in} $\land$  \it magazineHouses  $\subseteq$  \it houseset
+
+\vspace*{4mm}
+\hspace*{0.20in}\bf INITIALISATION
+
+\hspace*{0.40in}\it houseset \rm :=  $\ensembleVide$ 
+
+\hspace*{0.40in} $\para$  \it magazineHouses \rm :=  $\ensembleVide$ 
+
+\vspace*{4mm}
+\hspace*{0.20in}\bf OPERATIONS
+
+\hspace*{0.40in}
+
+\hspace*{0.40in}\bf add\rm (\it new\rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it new  $\in$  \bf NAT1  $\land$  \it new  $\not\in$  \it houseset  $\land$  \bf card\rm ( \it houseset \rm ) $<$ \it MAX\_DELIVERIES\hspace*{0.40in}
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\it houseset \rm := \it houseset  $\cup$  \rm \{ \it new \rm \}
+
+\hspace*{0.60in}\bf END \rm ;
+
+\hspace*{0.20in}
+
+\hspace*{0.40in}\it ans  $\leftarrow$  \bf number \rm =
+
+\hspace*{0.60in}\bf BEGIN
+
+\hspace*{0.80in}\it ans \rm := \bf card\rm ( \it houseset \rm )
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.20in}
+
+\hspace*{0.40in}\it ans  $\leftarrow$  \bf getsPapers\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it houseNumber  $\in$  \bf NAT1  $\land$  \it houseNumber  $\in$  \it houseset
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\it ans \rm := \rm 1
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.40in}
+
+\hspace*{0.40in}\bf cancelPapers\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it houseNumber  $\in$  \bf NAT1  $\land$  \it houseNumber  $\in$  \it houseset
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\it houseset \rm := \it houseset\rm -\rm \{\it houseNumber\rm \}
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.20in}
+
+\hspace*{0.40in}\it firstHouseNumber  $\leftarrow$  \bf firsthouse\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it houseNumber  $\in$  \bf NAT1  $\land$  \it houseNumber  $\in$  \it houseset
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\it firstHouseNumber \rm := \rm min\rm (\it houseset\rm )
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.20in}
+
+\hspace*{0.40in}\it lastHouseNumber  $\leftarrow$  \bf lasthouse\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it houseNumber  $\in$  \bf NAT1  $\land$  \it houseNumber  $\in$  \it houseset
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\it lastHouseNumber \rm := \bf max\rm (\it houseset\rm )
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.20in}
+
+\hspace*{0.40in}\hspace*{0.40in}\it message  $\leftarrow$  \bf haspaper\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it houseNumber  $\in$  \bf NAT1\hspace*{0.10in}
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\bf IF \rm ( \it houseNumber  $\in$  \it houseset \rm )
+
+\hspace*{0.80in}\bf THEN
+
+\hspace*{1.00in}\it message \rm := \it yes
+
+\hspace*{0.80in}\bf ELSE 
+
+\hspace*{1.00in}\it message \rm := \it no\hspace*{0.10in}
+
+\hspace*{0.80in}\bf END\hspace*{0.50in}
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.20in}
+
+\hspace*{0.40in}\hspace*{0.40in}\it outcome  $\leftarrow$  \bf stopdelivery\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it houseNumber  $\in$  \bf NAT1 
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\bf IF \rm ( \it houseNumber  $\in$  \it houseset \rm )
+
+\hspace*{1.20in}\bf THEN
+
+\hspace*{1.40in}\it houseset \rm := \it houseset\rm -\rm \{\it houseNumber\rm \}
+
+\hspace*{1.40in} $\para$  \it outcome \rm := \it NoMoreDeliveries
+
+\hspace*{1.20in}\bf ELSE
+
+\hspace*{1.40in}\it outcome \rm := \it NotDeliveredTo
+
+\hspace*{1.20in}\bf END
+
+\hspace*{0.60in}\bf END\rm ;
+
+\vspace*{4mm}
+\hspace*{0.40in}\bf deliverMagazine\rm ( \it newHouseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it newHouseNumber  $\in$  \bf NAT1  $\land$  \it newHouseNumber  $\not\in$  \it magazineHouses  $\land$  \it newHouseNumber  $\in$  \it houseset
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\it magazineHouses \rm := \it magazineHouses  $\cup$  \rm \{ \it newHouseNumber \rm \}
+
+\hspace*{0.60in}\bf END \rm ;
+
+\hspace*{0.40in}
+
+\hspace*{0.40in}\bf stopMagazine\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it houseNumber  $\in$  \bf NAT1  $\land$  \it houseNumber  $\in$  \it magazineHouses
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\it magazineHouses \rm := \it magazineHouses \rm - \rm \{\it houseNumber\rm \}
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.60in}
+
+\hspace*{0.40in}\it status\hspace*{0.10in} $\leftarrow$  \bf deliveries\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it status  $\in$  \it STATUS\hspace*{0.10in} $\land$ \hspace*{0.10in}\it houseNumber  $\in$  \bf NAT1 
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\bf IF \rm ( \rm ( \it houseNumber  $\in$  \it houseset \rm )  $\land$  \rm ( \it houseNumber  $\in$  \it magazineHouses\rm ) \rm )
+
+\hspace*{0.80in}\bf THEN
+
+\hspace*{1.10in}\it status \rm := \it PaperAndMagazine\hspace*{0.10in}
+
+\hspace*{0.20in}
+
+\hspace*{0.80in}\bf ELSIF \rm ( \it houseNumber  $\in$  \it houseset \rm )\hspace*{0.10in}
+
+\hspace*{0.80in}\bf THEN\hspace*{0.15in}
+
+\hspace*{1.10in}\it status \rm := \it OnlyPaper\hspace*{0.10in}
+
+\hspace*{0.20in}
+
+\hspace*{0.80in}\bf ELSIF \rm ( \it houseNumber  $\in$  \it magazineHouses \rm )\hspace*{0.10in}
+
+\hspace*{0.80in}\bf THEN\hspace*{0.10in}
+
+\hspace*{1.10in}\it status \rm := \it OnlyMagazine
+
+\hspace*{0.80in}\bf ELSE
+
+\hspace*{1.10in}\it status \rm := \it NoDeliveries
+
+\hspace*{0.80in}\bf END
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.40in}
+
+\hspace*{0.40in}\it outcome  $\leftarrow$  \bf stopalldeliverys\rm ( \it houseNumber \rm ) \rm =
+
+\hspace*{0.60in}\bf PRE \it outcome  $\in$  \it OUTCOME\hspace*{0.10in} $\land$ \hspace*{0.10in}\it houseNumber  $\in$  \bf NAT1\hspace*{0.10in}
+
+\hspace*{0.60in}\bf THEN
+
+\hspace*{0.80in}\bf IF \rm (\it houseNumber  $\in$  \it houseset  $\land$  \it houseNumber  $\in$  \it magazineHouses\rm )
+
+\hspace*{0.80in}\bf THEN
+
+\hspace*{1.00in}\it magazineHouses \rm := \it magazineHouses \rm - \rm \{\it houseNumber\rm \}
+
+\hspace*{1.00in} $\para$  \it houseset \rm := \it houseset \rm - \rm \{\it houseNumber\rm \}
+
+\hspace*{1.00in} $\para$  \it outcome \rm := \it NoMoreDeliveries
+
+\hspace*{0.80in}\bf ELSE
+
+\hspace*{1.00in}\it outcome \rm := \it NotDeliveringPaperAndMagazine
+
+\hspace*{0.80in}\bf END
+
+\hspace*{0.60in}\bf END\rm ;
+
+\hspace*{0.60in}
+
+\hspace*{0.40in}\it number  $\leftarrow$  \bf howmanymore \rm =
+
+\hspace*{0.60in}\bf BEGIN
+
+\hspace*{0.80in}\it number \rm :=\hspace*{0.15in}\it MAX\_DELIVERIES \rm - \bf card\rm ( \it houseset \rm ) 
+
+\hspace*{0.60in}\bf END
+
+\vspace*{4mm}
+\bf END
+
+\newpage
+\end{sloppypar}\end{document}
