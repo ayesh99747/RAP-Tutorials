@@ -1,0 +1,786 @@
+<Machine name='HotelRooms' type='abstraction'>
+<Sets>
+<Attr>
+<Pos l='8' c='1' s='4'/>
+</Attr>
+<Set>
+<Id value='ROOM' typref='2839442992'>
+<Attr>
+<Pos l='9' c='6' s='4'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='rm1' typref='184687337'>
+<Attr>
+<Pos l='9' c='17' s='3'/>
+</Attr>
+</Id>
+<Id value='rm2' typref='184687337'>
+<Attr>
+<Pos l='9' c='22' s='3'/>
+</Attr>
+</Id>
+<Id value='rm3' typref='184687337'>
+<Attr>
+<Pos l='9' c='27' s='3'/>
+</Attr>
+</Id>
+<Id value='rm4' typref='184687337'>
+<Attr>
+<Pos l='9' c='32' s='3'/>
+</Attr>
+</Id>
+<Id value='rm5' typref='184687337'>
+<Attr>
+<Pos l='9' c='37' s='3'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='10' c='6' s='4'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Ian' typref='2144979833'>
+<Attr>
+<Pos l='10' c='17' s='3'/>
+</Attr>
+</Id>
+<Id value='Sue' typref='2144979833'>
+<Attr>
+<Pos l='10' c='22' s='3'/>
+</Attr>
+</Id>
+<Id value='Tom' typref='2144979833'>
+<Attr>
+<Pos l='10' c='27' s='3'/>
+</Attr>
+</Id>
+<Id value='Jim' typref='2144979833'>
+<Attr>
+<Pos l='10' c='32' s='3'/>
+</Attr>
+</Id>
+<Id value='Bill' typref='2144979833'>
+<Attr>
+<Pos l='10' c='37' s='4'/>
+</Attr>
+</Id>
+<Id value='empty' typref='2144979833'>
+<Attr>
+<Pos l='10' c='43' s='5'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+<Set>
+<Id value='ANSWER' typref='1186478419'>
+<Attr>
+<Pos l='11' c='6' s='6'/>
+</Attr>
+</Id>
+<Enumerated_Values>
+<Id value='Yes' typref='3220095110'>
+<Attr>
+<Pos l='11' c='17' s='3'/>
+</Attr>
+</Id>
+<Id value='No' typref='3220095110'>
+<Attr>
+<Pos l='11' c='22' s='2'/>
+</Attr>
+</Id>
+</Enumerated_Values>
+</Set>
+</Sets>
+<Abstract_Variables>
+<Attr>
+<Pos l='13' c='3' s='18'/>
+</Attr>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='14' c='6' s='6'/>
+</Attr>
+</Id>
+</Abstract_Variables>
+<Invariant>
+<Attr>
+<Pos l='16' c='3' s='9'/>
+</Attr>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='17' c='13' s='1'/>
+</Attr>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='17' c='6' s='6'/>
+</Attr>
+</Id>
+<Binary_Exp op='&lt;-&gt;' typref='3206633027'>
+<Attr>
+<Pos l='17' c='20' s='3'/>
+</Attr>
+<Id value='ROOM' typref='2839442992'>
+<Attr>
+<Pos l='17' c='15' s='4'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='17' c='24' s='4'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Exp_Comparison>
+</Invariant>
+<Initialisation>
+<Attr>
+<Pos l='19' c='3' s='14'/>
+</Attr>
+<Assignement_Sub>
+<Attr>
+<Pos l='20' c='13' s='2'/>
+</Attr>
+<Variables>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='20' c='6' s='6'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='*' typref='3027274816'>
+<Attr>
+<Pos l='20' c='21' s='1'/>
+</Attr>
+<Id value='ROOM' typref='2839442992'>
+<Attr>
+<Pos l='20' c='16' s='4'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='1333172640'>
+<Attr>
+<Pos l='20' c='23' s='1'/>
+</Attr>
+<Id value='empty' typref='2144979833'>
+<Attr>
+<Pos l='20' c='25' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Initialisation>
+<Operations>
+<Operation name='guestsCheckIn'>
+<Attr>
+<Pos l='26' c='5' s='13' endLine='32'/>
+</Attr>
+<Input_Parameters>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='26' c='20' s='4'/>
+</Attr>
+</Id>
+<Id value='gnames' typref='1333172640'>
+<Attr>
+<Pos l='26' c='26' s='6'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='28' c='17' s='1'/>
+</Attr>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='28' c='12' s='4'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='2839442992'>
+<Attr>
+<Pos l='28' c='19' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;:'>
+<Attr>
+<Pos l='28' c='35' s='2'/>
+</Attr>
+<Id value='gnames' typref='1333172640'>
+<Attr>
+<Pos l='28' c='28' s='6'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='28' c='38' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='/='>
+<Attr>
+<Pos l='29' c='19' s='2'/>
+</Attr>
+<Id value='gnames' typref='1333172640'>
+<Attr>
+<Pos l='29' c='12' s='6'/>
+</Attr>
+</Id>
+<EmptySet typref='1333172640'>
+<Attr>
+<Pos l='29' c='22' s='2'/>
+</Attr>
+</EmptySet>
+</Exp_Comparison>
+<Exp_Comparison op='/:'>
+<Attr>
+<Pos l='29' c='35' s='2'/>
+</Attr>
+<Id value='empty' typref='2144979833'>
+<Attr>
+<Pos l='29' c='29' s='5'/>
+</Attr>
+</Id>
+<Id value='gnames' typref='1333172640'>
+<Attr>
+<Pos l='29' c='38' s='6'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='31' c='20' s='2'/>
+</Attr>
+<Variables>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='31' c='13' s='6'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='&lt;+' typref='3027274816'>
+<Attr>
+<Pos l='31' c='30' s='2'/>
+</Attr>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='31' c='23' s='6'/>
+</Attr>
+</Id>
+<Binary_Exp op='*' typref='3027274816'>
+<Attr>
+<Pos l='31' c='44' s='1'/>
+</Attr>
+<Nary_Exp op='{' typref='2839442992'>
+<Attr>
+<Pos l='31' c='35' s='1'/>
+</Attr>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='31' c='37' s='4'/>
+</Attr>
+</Id>
+</Nary_Exp>
+<Id value='gnames' typref='1333172640'>
+<Attr>
+<Pos l='31' c='46' s='6'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='guestsCheckOut'>
+<Attr>
+<Pos l='35' c='5' s='14' endLine='40'/>
+</Attr>
+<Input_Parameters>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='35' c='21' s='4'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='37' c='16' s='1'/>
+</Attr>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='37' c='11' s='4'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='2839442992'>
+<Attr>
+<Pos l='37' c='18' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='39' c='20' s='2'/>
+</Attr>
+<Variables>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='39' c='13' s='6'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='&lt;+' typref='3027274816'>
+<Attr>
+<Pos l='39' c='30' s='2'/>
+</Attr>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='39' c='23' s='6'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='3027274816'>
+<Attr>
+<Pos l='39' c='33' s='1'/>
+</Attr>
+<Binary_Exp op='|-&gt;' typref='2208047747'>
+<Attr>
+<Pos l='39' c='40' s='3'/>
+</Attr>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='39' c='35' s='4'/>
+</Attr>
+</Id>
+<Id value='empty' typref='2144979833'>
+<Attr>
+<Pos l='39' c='44' s='5'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Nary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='roomOccupants'>
+<Attr>
+<Pos l='43' c='5' s='5' endLine='48'/>
+</Attr>
+<Output_Parameters>
+<Id value='rmOcc' typref='1333172640'>
+<Attr>
+<Pos l='43' c='5' s='5'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='43' c='30' s='4'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='45' c='23' s='1'/>
+</Attr>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='45' c='18' s='4'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='2839442992'>
+<Attr>
+<Pos l='45' c='25' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='47' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='rmOcc' typref='1333172640'>
+<Attr>
+<Pos l='47' c='20' s='5'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Unary_Exp op='ran' typref='1333172640'>
+<Attr>
+<Pos l='47' c='29' s='3'/>
+</Attr>
+<Binary_Exp op='&lt;|' typref='3027274816'>
+<Attr>
+<Pos l='47' c='43' s='2'/>
+</Attr>
+<Nary_Exp op='{' typref='2839442992'>
+<Attr>
+<Pos l='47' c='34' s='1'/>
+</Attr>
+<Id value='room' typref='184687337'>
+<Attr>
+<Pos l='47' c='36' s='4'/>
+</Attr>
+</Id>
+</Nary_Exp>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='47' c='46' s='6'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Unary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='hasGuestCheckedIn'>
+<Attr>
+<Pos l='51' c='5' s='3' endLine='61'/>
+</Attr>
+<Output_Parameters>
+<Id value='ans' typref='3220095110'>
+<Attr>
+<Pos l='51' c='5' s='3'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='gname' typref='2144979833'>
+<Attr>
+<Pos l='51' c='32' s='5'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='53' c='24' s='1'/>
+</Attr>
+<Id value='gname' typref='2144979833'>
+<Attr>
+<Pos l='53' c='18' s='5'/>
+</Attr>
+</Id>
+<Id value='NAME' typref='1333172640'>
+<Attr>
+<Pos l='53' c='26' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='/='>
+<Attr>
+<Pos l='53' c='41' s='2'/>
+</Attr>
+<Id value='gname' typref='2144979833'>
+<Attr>
+<Pos l='53' c='35' s='5'/>
+</Attr>
+</Id>
+<Id value='empty' typref='2144979833'>
+<Attr>
+<Pos l='53' c='44' s='5'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='55' c='17' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='55' c='28' s='1'/>
+</Attr>
+<Id value='gname' typref='2144979833'>
+<Attr>
+<Pos l='55' c='22' s='5'/>
+</Attr>
+</Id>
+<Unary_Exp op='ran' typref='1333172640'>
+<Attr>
+<Pos l='55' c='30' s='3'/>
+</Attr>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='55' c='34' s='6'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Assignement_Sub>
+<Attr>
+<Pos l='57' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='ans' typref='3220095110'>
+<Attr>
+<Pos l='57' c='22' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='Yes' typref='3220095110'>
+<Attr>
+<Pos l='57' c='29' s='3'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Then>
+<Else>
+<Assignement_Sub>
+<Attr>
+<Pos l='59' c='26' s='2'/>
+</Attr>
+<Variables>
+<Id value='ans' typref='3220095110'>
+<Attr>
+<Pos l='59' c='22' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='No' typref='3220095110'>
+<Attr>
+<Pos l='59' c='29' s='2'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+</Else>
+</If_Sub>
+</Body>
+</Operation>
+<Operation name='guestsSwapRoom'>
+<Attr>
+<Pos l='64' c='5' s='14' endLine='73'/>
+</Attr>
+<Input_Parameters>
+<Id value='roomi' typref='184687337'>
+<Attr>
+<Pos l='64' c='21' s='5'/>
+</Attr>
+</Id>
+<Id value='roomj' typref='184687337'>
+<Attr>
+<Pos l='64' c='28' s='5'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='66' c='19' s='1'/>
+</Attr>
+<Id value='roomi' typref='184687337'>
+<Attr>
+<Pos l='66' c='13' s='5'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='2839442992'>
+<Attr>
+<Pos l='66' c='21' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='66' c='36' s='1'/>
+</Attr>
+<Id value='roomj' typref='184687337'>
+<Attr>
+<Pos l='66' c='30' s='5'/>
+</Attr>
+</Id>
+<Id value='ROOM' typref='2839442992'>
+<Attr>
+<Pos l='66' c='38' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='68' c='18' s='2'/>
+</Attr>
+<Variables>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='68' c='11' s='6'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='&lt;+' typref='3027274816'>
+<Attr>
+<Pos l='69' c='21' s='2'/>
+</Attr>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='68' c='21' s='6'/>
+</Attr>
+</Id>
+<Binary_Exp op='\/' typref='3027274816'>
+<Attr>
+<Pos l='70' c='25' s='2'/>
+</Attr>
+<Binary_Exp op='*' typref='3027274816'>
+<Attr>
+<Pos l='69' c='40' s='1'/>
+</Attr>
+<Nary_Exp op='{' typref='2839442992'>
+<Attr>
+<Pos l='69' c='30' s='1'/>
+</Attr>
+<Id value='roomi' typref='184687337'>
+<Attr>
+<Pos l='69' c='32' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+<Binary_Exp op='[' typref='1333172640'>
+<Attr>
+<Pos l='69' c='42' s='6'/>
+</Attr>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='69' c='42' s='6'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='2839442992'>
+<Attr>
+<Pos l='69' c='50' s='1'/>
+</Attr>
+<Id value='roomj' typref='184687337'>
+<Attr>
+<Pos l='69' c='52' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Binary_Exp>
+<Binary_Exp op='*' typref='3027274816'>
+<Attr>
+<Pos l='71' c='40' s='1'/>
+</Attr>
+<Nary_Exp op='{' typref='2839442992'>
+<Attr>
+<Pos l='71' c='30' s='1'/>
+</Attr>
+<Id value='roomj' typref='184687337'>
+<Attr>
+<Pos l='71' c='32' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+<Binary_Exp op='[' typref='1333172640'>
+<Attr>
+<Pos l='71' c='42' s='6'/>
+</Attr>
+<Id value='guests' typref='3027274816'>
+<Attr>
+<Pos l='71' c='42' s='6'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='2839442992'>
+<Attr>
+<Pos l='71' c='50' s='1'/>
+</Attr>
+<Id value='roomi' typref='184687337'>
+<Attr>
+<Pos l='71' c='52' s='5'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Binary_Exp>
+</Binary_Exp>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+</Operations>
+<TypeInfos>
+<Type id='2839442992'>
+<Unary_Exp op='POW'>
+<Id value='ROOM'/>
+</Unary_Exp>
+</Type>
+<Type id='184687337'>
+<Id value='ROOM'/>
+</Type>
+<Type id='1333172640'>
+<Unary_Exp op='POW'>
+<Id value='NAME'/>
+</Unary_Exp>
+</Type>
+<Type id='2144979833'>
+<Id value='NAME'/>
+</Type>
+<Type id='1186478419'>
+<Unary_Exp op='POW'>
+<Id value='ANSWER'/>
+</Unary_Exp>
+</Type>
+<Type id='3220095110'>
+<Id value='ANSWER'/>
+</Type>
+<Type id='3027274816'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='ROOM'/>
+<Id value='NAME'/>
+</Binary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='3206633027'>
+<Unary_Exp op='POW'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='ROOM'/>
+<Id value='NAME'/>
+</Binary_Exp>
+</Unary_Exp>
+</Unary_Exp>
+</Type>
+<Type id='2208047747'>
+<Binary_Exp op='*'>
+<Id value='ROOM'/>
+<Id value='NAME'/>
+</Binary_Exp>
+</Type>
+</TypeInfos>
+
+</Machine>

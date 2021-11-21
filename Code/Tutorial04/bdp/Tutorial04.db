@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<db_xml>
+    <atelierb version="3_7_ubuntu-cvs" />
+    <project decomp_dir="E:\Google Drive - IIT\Year 4\6SENG001W - 6SENG003C Reasoning about Programs\Tutorials\Code\Tutorial04\bdp\expand_src" old_decomp_dir="E:\Google Drive - IIT\Year 4\6SENG001W - 6SENG003C Reasoning about Programs\Tutorials\Code\Tutorial04\bdp\src">
+        <!-- Definition directory list -->
+        <!-- Component file list -->
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial04" name="Logic" suffix="mch" user="ayesh">
+            <component name="Logic" type="specification" />
+        </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Tutorials/Code/Tutorial04" name="logic_lecture" suffix="mch" user="ayesh">
+            <component name="logic_lecture" type="specification" />
+        </component_file>
+    </project>
+</db_xml>

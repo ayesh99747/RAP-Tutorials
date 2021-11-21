@@ -1,0 +1,5 @@
+digraph {
+HotelRooms [ label=" HotelRooms " shape= box ]
+Relations [ label=" Relations " shape= box ]
+
+}

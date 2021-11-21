@@ -1,0 +1,36 @@
+digraph g {
+rankdir=RL;
+    Noderoot [label="&and;\nfalse", shape="rect", fillcolor="tomato", style="filled,rounded"]
+    Node1 [label="&forall;\ntrue\n&forall;xx&#183;(xx &#8712; AA &rArr; xx &le; 2)", shape="rect", fillcolor="olivedrab2", style="filled,rounded"]
+        Node1 -> Noderoot;
+    Node2 [label="&#8712;\ntrue\nxx &#8712; AA", shape="rect", fillcolor="olivedrab2", style="filled,rounded"]
+        Node2 -> Node1;
+    Node3 [label="xx|0", shape="record", fillcolor="white", style="filled"]
+        Node3 -> Node2;
+    Node4 [label="AA|\{0,1,2\}", shape="record", fillcolor="white", style="filled"]
+        Node4 -> Node2;
+    Node5 [label="&le;\ntrue\nxx &le; 2", shape="rect", fillcolor="olivedrab2", style="filled,rounded"]
+        Node5 -> Node1;
+    Node6 [label="xx|0", shape="record", fillcolor="white", style="filled"]
+        Node6 -> Node5;
+    Node7 [label="2", shape="record", fillcolor="white", style="filled"]
+        Node7 -> Node5;
+    Node8 [label="xx|0", shape="record", fillcolor="white", style="filled"]
+        Node8 -> Node1;
+    Node9 [label="&forall;\nfalse\n&forall;yy&#183;(yy &#8712; BB &rArr; yy &le; 3)", shape="rect", fillcolor="tomato", style="filled,rounded"]
+        Node9 -> Noderoot;
+    Node10 [label="&#8712;\ntrue\nyy &#8712; BB", shape="rect", fillcolor="olivedrab2", style="filled,rounded"]
+        Node10 -> Node9;
+    Node11 [label="yy|4", shape="record", fillcolor="white", style="filled"]
+        Node11 -> Node10;
+    Node12 [label="BB|\{0,2,4\}", shape="record", fillcolor="white", style="filled"]
+        Node12 -> Node10;
+    Node13 [label="&le;\nfalse\nyy &le; 3", shape="rect", fillcolor="tomato", style="filled,rounded"]
+        Node13 -> Node9;
+    Node14 [label="yy|4", shape="record", fillcolor="white", style="filled"]
+        Node14 -> Node13;
+    Node15 [label="3", shape="record", fillcolor="white", style="filled"]
+        Node15 -> Node13;
+    Node16 [label="yy|4", shape="record", fillcolor="white", style="filled"]
+        Node16 -> Node9;
+}

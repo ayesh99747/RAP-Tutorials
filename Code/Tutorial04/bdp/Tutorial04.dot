@@ -1,0 +1,5 @@
+digraph {
+Logic [ label=" Logic " shape= box ]
+logic_lecture [ label=" logic_lecture " shape= box ]
+
+}
